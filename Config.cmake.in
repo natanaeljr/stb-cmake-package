@@ -2,7 +2,4 @@
 
 include("${CMAKE_CURRENT_LIST_DIR}/stbTargets.cmake")
 
-#cmakedefine STB_IMAGE
-if(STB_IMAGE)
-  check_required_components(stb_image)
-endif(STB_IMAGE)
+check_required_components(stb_image)

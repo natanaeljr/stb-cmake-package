@@ -4,51 +4,50 @@ project(stb VERSION 0.8.1)
 #########################################################################################
 # STB Image
 #########################################################################################
-# Compile and export stb_image.h
-option(STB_IMAGE ON)
+option(STB_IMAGE "Compile and export stb_image.h" ON)
 
 # Suppress system IO interfacing code
-option(STBI_NO_STDIO OFF)
+option(STBI_NO_STDIO "" OFF)
 # Suppress implementation of .hdr reader format
-option(STBI_NO_HDR OFF)
+option(STBI_NO_HDR "" OFF)
 # Suppress high-dynamic-range light-linear float API
-option(STBI_NO_LINEAR OFF)
+option(STBI_NO_LINEAR "" OFF)
 
 # You can suppress implementation of any of the decoders to reduce
 # your code footprint by defining one or more of the following
 # symbols before creating the implementation
-option(STBI_NO_JPEG OFF)
-option(STBI_NO_PNG OFF)
-option(STBI_NO_BMP OFF)
-option(STBI_NO_PSD OFF)
-option(STBI_NO_TGA OFF)
-option(STBI_NO_GIF OFF)
-option(STBI_NO_HDR OFF)
-option(STBI_NO_PIC OFF)
-option(STBI_NO_PNM OFF) #(.ppm and .pgm)
+option(STBI_NO_JPEG "" OFF)
+option(STBI_NO_PNG "" OFF)
+option(STBI_NO_BMP "" OFF)
+option(STBI_NO_PSD "" OFF)
+option(STBI_NO_TGA "" OFF)
+option(STBI_NO_GIF "" OFF)
+option(STBI_NO_HDR "" OFF)
+option(STBI_NO_PIC "" OFF)
+option(STBI_NO_PNM "" OFF) #(.ppm and .pgm)
 
 # You can request *only* certain decoders and suppress all other ones
 # (this will be more forward-compatible, as addition of new decoders
 # doesn't require you to disable them explicitly):
-option(STBI_ONLY_JPEG OFF)
-option(STBI_ONLY_PNG OFF)
-option(STBI_ONLY_BMP OFF)
-option(STBI_ONLY_PSD OFF)
-option(STBI_ONLY_TGA OFF)
-option(STBI_ONLY_GIF OFF)
-option(STBI_ONLY_HDR OFF)
-option(STBI_ONLY_PIC OFF)
-option(STBI_ONLY_PNM OFF) #(.ppm and .pgm)
+option(STBI_ONLY_JPEG "" OFF)
+option(STBI_ONLY_PNG "" OFF)
+option(STBI_ONLY_BMP "" OFF)
+option(STBI_ONLY_PSD "" OFF)
+option(STBI_ONLY_TGA "" OFF)
+option(STBI_ONLY_GIF "" OFF)
+option(STBI_ONLY_HDR "" OFF)
+option(STBI_ONLY_PIC "" OFF)
+option(STBI_ONLY_PNM "" OFF) #(.ppm and .pgm)
 
 # If you use STBI_NO_PNG (or _ONLY_ without PNG), and you still
 # want the zlib decoder to be available, define STBI_SUPPORT_ZLIB.
-option(STBI_SUPPORT_ZLIB OFF)
+option(STBI_SUPPORT_ZLIB "" OFF)
 
 # Compilation of all SIMD code can be suppressed with
-option(STBI_NO_SIMD OFF)
+option(STBI_NO_SIMD "" OFF)
 
 # If you must produce consistent results with previous versions of stb_image
-option(STBI_JPEG_OLD OFF)
+option(STBI_JPEG_OLD "" OFF)
 
 # STB Image target
 if(STB_IMAGE)
