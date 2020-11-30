@@ -63,6 +63,7 @@ ExternalProject_Add(stb_external
 ExternalProject_Add(SubProject
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/SubProject
     SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/SubProject
+    BUILD_ALWAYS 1
     CMAKE_ARGS
         -DCMAKE_GENERATOR=${CMAKE_GENERATOR}
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
