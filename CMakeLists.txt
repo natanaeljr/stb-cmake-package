@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(stb VERSION 0.8.1)
+project(stb VERSION 0.9.0)
 
 #########################################################################################
 # STB Image
@@ -86,6 +86,35 @@ if(STB_IMAGE)
 
 endif(STB_IMAGE)
 
+#########################################################################################
+# STB TrueType
+#########################################################################################
+option(STB_TRUETYPE "Compile and export stb_truetype.h" ON)
+
+# STB TrueType target
+if(STB_TRUETYPE)
+    add_library(stb_truetype STATIC src/stb_truetype.c)
+    target_include_directories(stb_truetype PUBLIC
+        "$<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>")
+
+    install(TARGETS stb_truetype EXPORT stbTargets)
+    install(FILES include/stb/stb_truetype.h DESTINATION include/stb)
+endif(STB_IMAGE)
+
+#########################################################################################
+# STB RectPack
+#########################################################################################
+option(STB_TRUETYPE "Compile and export stb_rect_pack.h" ON)
+
+# STB TrueType target
+if(STB_TRUETYPE)
+    add_library(stb_rect_pack STATIC src/stb_rect_pack.c)
+    target_include_directories(stb_rect_pack PUBLIC
+        "$<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>")
+
+    install(TARGETS stb_rect_pack EXPORT stbTargets)
+    install(FILES include/stb/stb_rect_pack.h DESTINATION include/stb)
+endif(STB_IMAGE)
 
 #########################################################################################
 # Package Configuration
